@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form action="" class="login">
+        <form action="/home" class="login">
             <input type="text" placeholder="USERNAME" />
             <br/>
             <input type="password" placeholder="PASSWORD" />
