@@ -23,7 +23,7 @@
     };
 </script>
 
-<style scope>
+<style scoped>
 
 /*==================== login form ====================*/
     .login {
