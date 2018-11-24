@@ -12,11 +12,6 @@
                 </router-link>
             </li>
             <li class="links">
-                <router-link to="/services">
-                      services
-                </router-link>
-            </li>
-            <li class="links">
                 <router-link to="/contact">
                       contact
                 </router-link>
@@ -40,6 +35,7 @@
         left: 0;
         width: 100%;
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
+        border-bottom: 4px solid rgb(20, 12, 8);
     }
     
     nav li {

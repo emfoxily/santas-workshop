@@ -13,8 +13,15 @@
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Cookie');
+
   body {
     background-image: url('./assets/background.png');
+    background-attachment: fixed;
+  }
+
+  h1 {
+    font-family: 'Cookie', cursive;
   }
   
   #app {
@@ -22,6 +29,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: rgb(148, 43, 43);
   }
 </style>

@@ -9,6 +9,8 @@
         Quality toys est. 1843 — unless you're on the naughty list
       </h3>
     </header>
+    <Testimonials />
+    <NeedHelp />
     <Trees />
   </div>
 </template>
@@ -16,12 +18,16 @@
 <script>
   import Navigation from '../navigation/Navigation.vue';
   import Trees from '../trees/Trees.vue';
+  import Testimonials from './Testimonials.vue';
+  import NeedHelp from './NeedHelp.vue';
   
   export default {
     name: 'HomePage',
     components: {
       Navigation,
-      Trees
+      Trees,
+      Testimonials,
+      NeedHelp,
     }
   };
 </script>
