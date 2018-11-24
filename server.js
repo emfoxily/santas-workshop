@@ -3,7 +3,7 @@ const serveStatic = require('serve-static')
 const path = require('path')
 
 // psql
-const pg = require(‘pg’);
+const pg = require('pg');
 const connectionString = "postgres://userName:password@serverName/ip:port/nameOfDatabase";
 const pgClient = new pg.Client(connectionString);
 
