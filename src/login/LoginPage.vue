@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="trees" src="../assets/trees.png"/>
+        <Trees />
         <form action="/home" class="login">
             <input type="text" placeholder="USERNAME" />
             <br/>
@@ -13,9 +13,14 @@
 </template>
 
 <script>
+    import Trees from '../trees/Trees.vue';
+
     export default {
         name: 'LoginPage',
-    }
+        components: {
+            Trees,
+        }
+    };
 </script>
 
 <style scope>
@@ -54,13 +59,5 @@
     .login input::placeholder {
         color: rgba(255, 255, 255, .8);
         font-weight: 600;
-    }
-
-/*==================== tree background overlay ====================*/
-    .trees {
-        position: fixed;
-        width:100%;
-        bottom: 0;
-        left: 0;
     }
 </style>

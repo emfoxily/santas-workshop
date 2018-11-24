@@ -9,16 +9,19 @@
         Quality toys est. 1843 — unless you're on the naughty list
       </h3>
     </header>
+    <Trees />
   </div>
 </template>
 
 <script>
   import Navigation from '../navigation/Navigation.vue';
+  import Trees from '../trees/Trees.vue';
   
   export default {
     name: 'HomePage',
     components: {
-      Navigation
+      Navigation,
+      Trees
     }
   };
 </script>
