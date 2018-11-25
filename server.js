@@ -8,8 +8,12 @@ const PG = require('pg');
 
 // const config = process.env.HEROKU_DATABASE_URL;
 
-const conString = process.env.HEROKU_DATABASE_URL
+const conString = process.env.HEROKU_DATABASE_URL;
 const pool = new PG.Pool(conString);
+
+// if (process.env.HEROKU_DATABASE_URL) {
+//   PG.defaults.ssl = true;
+// }
 
 app.get('/elves', (req, res) => {
   pool.connect((err, client, done) => {
@@ -33,7 +37,7 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname }/dist/index.html`);
 });
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 app.listen(port)
 
 console.log('Server started on port ' + port) 
