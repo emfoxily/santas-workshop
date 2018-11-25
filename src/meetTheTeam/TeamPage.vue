@@ -4,21 +4,21 @@
         <img class="header" src="./meetTheTeam.png" alt="Meet the Team"/>
         <div class="staff">
             <div>
-                <img src="./buddy.png" alt="Buddy"/>
+                <img v-bind:src="elves[0].elf_avatar" alt="Buddy"/>
                 <h3>
-                    Buddy the Elf
+                    {{ elves[0].elf_name }}
                 </h3>
             </div>
             <div>
-                <img src="./mingming.png" alt="Ming Ming"/>
+                <img v-bind:src="elves[1].elf_avatar" alt="Ming Ming"/>
                 <h3>
-                    Ming Ming
+                    {{ elves[1].elf_name }}
                 </h3>
             </div>
             <div>
-                <img src="./jovie.png" alt="Jovie"/>
+                <img v-bind:src="elves[2].elf_avatar" alt="Jovie"/>
                 <h3>
-                    Jovie
+                    {{ elves[2].elf_name }}
                 </h3>
             </div>
         </div>
@@ -30,11 +30,31 @@
 import Navigation from '../navigation/Navigation.vue';
 import Trees from '../trees/Trees.vue';
 
+import axios from "axios";
+
 export default {
     name: 'Meet-the-Team',
     components: {
         Navigation,
         Trees
+    },
+    data() {
+        return {
+            elves:[],
+        }
+    },
+    mounted() {
+        axios({
+            method: "GET", "url": "/elves"
+        }).then(result => {
+            this.elves = result.data;
+            console.log(this.elves);         
+        }, error => {
+            console.log(error); 
+        })
+    },
+    methods: {
+
     }
 }
 </script>

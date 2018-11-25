@@ -8,24 +8,24 @@ const PG = require('pg');
 
 // const config = process.env.HEROKU_DATABASE_URL;
 
-// const conString = 'postgres://emfoxily:luna@localhost/santas_workshop';
-// const pool = new PG.Pool(conString);
+const conString = process.env.DATABASE || process.env.HEROKU_DATABASE_URL;
+const pool = new PG.Pool(conString);
 
-// app.get('/', (req, res) => {
-//   pool.connect((err, client, done) => {
-//     if(err) {
-//       return console.error('error fetching client from pool', err);
-//     }
-//     client.query('SELECT * FROM elves', (err, result) => {
-//       if(err) {
-//         return console.error('error running query', err);
-//       }
-//       res.render('TeamPage', {elves: result.rows});
-//       console.log(result);
-//       done();
-//     });
-//   });
-// });
+app.get('/elves', (req, res) => {
+  pool.connect((err, client, done) => {
+    if(err) {
+      return console.error('error fetching client from pool', err);
+    }
+    client.query('SELECT * FROM elves', (err, result) => {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      res.json(result.rows);
+      console.log(result.rows);
+      done();
+    });
+  });
+});
 
 app.use('/', serveStatic(path.join(__dirname, '/dist')));
 
