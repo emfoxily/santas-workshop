@@ -36,6 +36,7 @@
         width: 100%;
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
         border-bottom: 4px solid rgb(20, 12, 8);
+        z-index: 3;
     }
     
     nav li {

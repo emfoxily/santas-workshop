@@ -1,15 +1,31 @@
 const express = require('express');
+const app = express();
 const serveStatic = require('serve-static');
 const path = require('path');
 
 // psql
-const pg = require('pg');
+const PG = require('pg');
 
-const connectionString = 'postgres://userName:password@serverName/ip:port/nameOfDatabase';
-const pgClient = new pg.Client(connectionString);
-pgClient.connect();
+// const config = process.env.HEROKU_DATABASE_URL;
 
-const app = express();
+// const conString = 'postgres://emfoxily:luna@localhost/santas_workshop';
+// const pool = new PG.Pool(conString);
+
+// app.get('/', (req, res) => {
+//   pool.connect((err, client, done) => {
+//     if(err) {
+//       return console.error('error fetching client from pool', err);
+//     }
+//     client.query('SELECT * FROM elves', (err, result) => {
+//       if(err) {
+//         return console.error('error running query', err);
+//       }
+//       res.render('TeamPage', {elves: result.rows});
+//       console.log(result);
+//       done();
+//     });
+//   });
+// });
 
 app.use('/', serveStatic(path.join(__dirname, '/dist')));
 

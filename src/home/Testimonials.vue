@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     .testimonials {
         display: flex;
         justify-content: center;
