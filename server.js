@@ -8,7 +8,7 @@ const PG = require('pg');
 
 // const config = process.env.HEROKU_DATABASE_URL;
 
-const conString = process.env.DATABASE || process.env.HEROKU_DATABASE_URL;
+const conString = process.env.HEROKU_DATABASE_URL
 const pool = new PG.Pool(conString);
 
 app.get('/elves', (req, res) => {
