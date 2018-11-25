@@ -37,7 +37,7 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname }/dist/index.html`);
 });
 
-const port = process.env.PORT || 8080
+const port = 5000
 app.listen(port)
 
 console.log('Server started on port ' + port) 
