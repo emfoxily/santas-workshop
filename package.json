@@ -34,11 +34,8 @@
     "vue-template-compiler": "^2.5.17"
   },
   "development": {
-    "username": "",
-    "password": "",
-    "database": "emilyreno",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "host": "ec2-50-17-203-51.compute-1.amazonaws.com",
+    "port": "5432"
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
