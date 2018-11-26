@@ -33,6 +33,15 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "vue-template-compiler": "^2.5.17"
   },
+  "database": {
+    "host": "ec2-50-17-203-51.compute-1.amazonaws.com",
+    "port": "5432",
+    "database": "d6kc9qsg6bv4dj",
+    "username": "raziktubqynlxz",
+    "password": "c9a9dbfb08cdbf724e46ad81217ed180486d20faed4b091b9b968584781a24f8",
+    "name": "postgres",
+    "connector": "postgresql"
+  },
   "development": {
     "username": "",
     "password": "",
