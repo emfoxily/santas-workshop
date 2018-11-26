@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: 'heroku-postgresql:hobby-dev'
+      as: DATABASE
+  config:
+    NODE_ENV: production
+    NODE_MODULES_CACHE: 'true'
+    NPM_CONFIG_PRODUCTION: 'true'
+build:
+  languages:
+    - nodejs
+run:
+  web: node server.js
