@@ -35,7 +35,12 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname }/dist/index.html`);
 });
 
-const port = process.env.PORT || 5000;
-app.listen(port)
+const server = app.listen(process.env.PORT || 5000, () => {
+  const port = server.address().port;
+  console.log('Express is working on port ' + port);
+});
 
-console.log('Server started on port ' + port) 
+// const port = process.env.PORT || 5000;
+// app.listen(port)
+
+// console.log('Server started on port ' + port) 
