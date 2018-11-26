@@ -4,9 +4,7 @@ const serveStatic = require('serve-static');
 const path = require('path');
 
 // psql
-const PG = require('pg');
-
-// const config = process.env.HEROKU_DATABASE_URL;
+const PG = require('pg').native;
 
 const conString = process.env.DATABASE_URL;
 const pool = new PG.Pool(conString);
