@@ -9,10 +9,6 @@ const PG = require('pg').native;
 const conString = process.env.DATABASE_URL;
 const pool = new PG.Pool(conString);
 
-// if (process.env.HEROKU_DATABASE_URL) {
-//   PG.defaults.ssl = true;
-// }
-
 app.get('/elves', (req, res) => {
   pool.connect((err, client, done) => {
     if(err) {
