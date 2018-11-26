@@ -32,8 +32,16 @@
     "eslint-plugin-vue": "^5.0.0-0",
     "vue-template-compiler": "^2.5.17"
   },
+  "development": {
+    "username": "",
+    "password": "",
+    "database": "emilyreno",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
   "production": {
-    "use_env_variable": "HEROKU_DATABASE_URL"
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres"
   },
   "description": "Santa's Workshop",
   "main": "server.js",
