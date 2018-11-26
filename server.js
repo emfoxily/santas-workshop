@@ -11,6 +11,8 @@ const pool = new PG.Pool(conString);
 
 app.get('/elves', (req, res) => {
   pool.connect((err, client, done) => {
+    console.log(client.connectionParameters);
+    
     if(err) {
       return console.error('error fetching client from pool', err);
     }
