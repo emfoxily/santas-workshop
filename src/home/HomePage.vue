@@ -11,6 +11,10 @@
     </header>
     <Testimonials />
     <NeedHelp />
+    <br/>
+    <br/>
+    <br/>
+    <Footer />
     <Trees />
   </div>
 </template>
@@ -20,6 +24,7 @@
   import Trees from '../trees/Trees.vue';
   import Testimonials from './Testimonials.vue';
   import NeedHelp from './NeedHelp.vue';
+  import Footer from '../footer/Footer.vue';
   
   export default {
     name: 'HomePage',
@@ -28,6 +33,7 @@
       Trees,
       Testimonials,
       NeedHelp,
+      Footer
     }
   };
 </script>

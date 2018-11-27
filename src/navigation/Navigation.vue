@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li>
-                <router-link to="/home">
+                <router-link to="/">
                     <img src="../navigation/favicon.png" alt="favicon" />
                 </router-link>
             </li>

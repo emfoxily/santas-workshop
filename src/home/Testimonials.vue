@@ -65,6 +65,10 @@ export default {
         font-style: italic;
     }
 
+    .testimonial h1 {
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+    }
+
     .testimonial h3 {
         display: flex;
         width: 90%;

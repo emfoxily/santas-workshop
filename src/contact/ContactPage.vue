@@ -20,5 +20,8 @@ export default {
 </script>
 
 <style>
-
+    .header {
+        width: 75%;
+        margin-top: 75px;
+    }
 </style>

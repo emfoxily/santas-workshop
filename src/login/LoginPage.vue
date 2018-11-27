@@ -1,14 +1,14 @@
 <template>
     <div>
+        <div class="login">
+            <input type="text" name="username" v-model="input.username" placeholder="USERNAME" />
+            <br/>
+            <input type="password" name="password" v-model="input.password" placeholder="PASSWORD" />
+            <br/>
+            <button type="button" @click="login()">LOGIN</button>
+        </div>
+        <img class="sign" src="../assets/login-sign.png" alt="Login Sign" />
         <Trees />
-        <form action="/home" class="login">
-            <input type="text" placeholder="USERNAME" />
-            <br/>
-            <input type="password" placeholder="PASSWORD" />
-            <br/>
-            <input type="submit" value="LOGIN" />
-        </form>
-        <img src="../assets/login-sign.png" alt="Login Sign" />
     </div>
 </template>
 
@@ -19,6 +19,28 @@
         name: 'LoginPage',
         components: {
             Trees,
+        },
+        data() {
+            return {
+                input: {
+                    username: "",
+                    password: ""
+                }
+            }
+        },
+        methods: {
+            login() {
+                if(this.input.username != "" && this.input.password != "") {
+                    if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
+                        this.$emit("authenticated", true);
+                        this.$router.replace({ name: "secure" });
+                    } else {
+                        console.log('The username and / or password is incorrect');
+                    }
+                } else {
+                    console.log('A username and password must be present');
+                }
+            }
         }
     };
 </script>
@@ -27,13 +49,15 @@
 
 /*==================== login form ====================*/
     .login {
+        position: absolute;
         width: 100vw;
         margin: 310px auto;
         position: absolute;
         line-height: 100px;
+        z-index: 3;
     }
 
-    .login input[type=submit] {
+    .login button {
         background-color: rgb(47, 25, 15);
         width: 150px;
         padding: .5em;
@@ -59,5 +83,10 @@
     .login input::placeholder {
         color: rgba(255, 255, 255, .8);
         font-weight: 600;
+    }
+
+    .sign {
+        margin-top: -10px;
+        z-index: -1;
     }
 </style>

@@ -11,11 +11,11 @@ Vue.use(Router);
 export default new Router({
   mode: 'history',
   routes: [{
-    path: '/',
+    path: '/login',
     name: 'Login/Sign Up',
     component: LoginPage,
   }, {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: HomePage,
   }, {

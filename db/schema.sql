@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE elves(
     elf_id serial PRIMARY KEY, 
     elf_name VARCHAR(255), 
-    elf_avatar VARCHAR(255), 
+    elf_avatar VARCHAR(255),
+    elf_about TEXT, 
     elf_messages TEXT []
 );
 

@@ -7,9 +7,11 @@
             <p>
                 Get help from our most trained elves to get the toy you deserve!
             </p>
-            <button>
-                Open a Ticket
-            </button>
+            <a href="/contact">
+                <button>
+                    Open a Ticket
+                </button>
+            </a>
         </div>
     </div>
 </template>
@@ -20,7 +22,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .needHelp {
         background-image: url('../assets/peppermint.png');
         background-size: cover;
@@ -57,7 +59,7 @@
     }
 
     .needHelp button {
-        background-color: rgb(75, 100, 71);
+        background-image: url('../assets/background.png');
         margin-bottom: 50px;
         padding: 1em;
         outline: none;
