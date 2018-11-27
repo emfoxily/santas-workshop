@@ -73,15 +73,13 @@ export default {
     },
     methods: {
         aboutBuddy() {
-            // console.log('hello!');
             this.showBuddyAbout = !this.showBuddyAbout;
             if (this.showMingMingAbout === true || this.showJovieAbout === true) {
                 this.showMingMingAbout = false;
                 this.showJovieAbout = false;
-            }     
+            }    
         },
         aboutMingMing() {
-            // console.log('hello!');
             this.showMingMingAbout = !this.showMingMingAbout;
             if (this.showBuddyAbout === true || this.showJovieAbout === true) {
                 this.showBuddyAbout = false;
@@ -89,7 +87,6 @@ export default {
             }        
         },
         aboutJovie() {
-            // console.log('hello!');
             this.showJovieAbout = !this.showJovieAbout;
             if (this.showMingMingAbout === true || this.showBuddyAbout === true) {
                 this.showMingMingAbout = false;
