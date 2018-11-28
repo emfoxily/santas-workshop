@@ -6,7 +6,7 @@
             <input type="text" placeholder="First Name"/>
             <input type="text" placeholder="Last Name"/>
             <br/>
-            <input type="textarea" placeholder="Tell us what happened!"/>
+            <textarea placeholder="Tell us what happened!"/>
             <br/>
             <input type="submit" value="SUBMIT"/>
         </form>
@@ -38,44 +38,47 @@ export default {
         margin: 0 auto;
     }  
 
-    input {
-        background-color: rgb(55, 75, 52);
-        border: 4px solid rgb(50, 68, 47);
+    input, textarea {
+        background-color: rgb(230, 230, 230);
+        border: 4px solid rgb(226, 226, 226);
         border-radius: 5px;
         outline: none;
-        color: rgb(255, 255, 255);
+        color: rgb(207, 28, 28);
+        overflow-wrap: break-word;
     }
 
-    input::placeholder {
+    input::placeholder, textarea::placeholder {
         text-transform: uppercase;
-        color: rgba(255, 255, 255, .7);
+        color: rgb(207, 28, 28);
+        font-size: 20px;
+        font-weight: 600;
     }
 
     input[type="text"] {
-        width: 197px;
+        width: 203px;
         padding: 1em;
         margin-right: 5px;
         margin-bottom: 5px;
     }
 
-    input[type="textarea"] {
+    textarea {
         width: 405px;
-        height: 200px;
+        height: 250px;
         padding: 2em;
         margin-bottom: 10px;
+        margin-left: -1px;
         line-break:normal;
-    }
-
-    input[type="textarea"]::placeholder {
-        margin-top: -100px;
+        resize: none;
+        font-size: 15px;
     }
 
     input[type="submit"] {
         padding: .5em;
-        width: 400px;
-        color: rgba(255, 255, 255, .7);
+        width: 465px;
+        color: rgb(207, 28, 28);
         font-weight: 600;
         font-size: 20px;
         cursor: pointer;
+        border: 4px solid rgb(219, 219, 219);
     }
 </style>
