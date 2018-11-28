@@ -37,6 +37,9 @@
                 {{ elves[2].elf_about }}
             </p>
         </div>
+        <span class="click" v-if="showJovieAbout == false && showBuddyAbout == false && showMingMingAbout == false">
+            Click on one of the team members to learn more about them!
+        </span>
         <Trees />
     </div>
 </template>
@@ -144,5 +147,14 @@ export default {
         color: rgb(255, 255, 255);
         border: 4px solid rgb(20, 12, 8);
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
+    }
+
+    .click {
+        padding: 1em;
+        font-size: 25px;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+        line-height: 200px;
+        border-top: 1px solid rgb(255, 255, 255);
     }
 </style>
