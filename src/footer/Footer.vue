@@ -14,14 +14,14 @@ export default {
     name: 'Footer',
     components: {
         Chat
-    }
+    },
 }
 </script>
 
 <style>
     footer {
         display: flex;
-        padding-left: .5em;
+        justify-content: space-between;
         position: fixed;
         background-color: rgb(218, 221, 219);
         width: 100%;

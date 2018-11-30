@@ -12,19 +12,19 @@ export default new Router({
   mode: 'history',
   routes: [{
     path: '/login',
-    name: 'Login/Sign Up',
+    name: 'login',
     component: LoginPage,
   }, {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: HomePage,
   }, {
     path: '/team',
-    name: 'Meet The Team',
+    name: 'team',
     component: TeamPage,
   }, {
     path: '/contact',
-    name: 'Contact',
+    name: 'contact',
     component: ContactPage,
   }],
 });

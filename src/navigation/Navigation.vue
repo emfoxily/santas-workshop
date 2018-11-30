@@ -8,15 +8,20 @@
             </li>
             <li class="links">
                 <router-link to="/team">
-                      meet the team
+                    meet the team
                 </router-link>
             </li>
             <li class="links">
                 <router-link to="/contact">
-                      contact
+                    contact
                 </router-link>
             </li>
         </ul>
+        <li class="links logout">
+                <router-link to="/login" @click="logout()">
+                    logout
+                </router-link>
+            </li>
     </nav>
 </template>
 
@@ -48,7 +53,7 @@
         display: flex;
         align-content: center;
     }
-
+    
     nav img {
         width: 25px;
     }
@@ -60,10 +65,14 @@
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0);
     }
-
+    
     .links a:hover {
         border-bottom: 1px solid rgba(255, 255, 255, 1);
         transition: 1s;
     }
 
+    .logout {
+        margin-top: -55px;
+        float: right;
+    }
 </style>

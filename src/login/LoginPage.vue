@@ -14,7 +14,7 @@
 
 <script>
     import Trees from '../trees/Trees.vue';
-
+    
     export default {
         name: 'LoginPage',
         components: {
@@ -30,10 +30,12 @@
         },
         methods: {
             login() {
-                if(this.input.username != "" && this.input.password != "") {
-                    if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
+                if (this.input.username != "" && this.input.password != "") {
+                    if (this.input.username == this.$parent.account.username && this.input.password == this.$parent.account.password) {
                         this.$emit("authenticated", true);
-                        this.$router.replace({ name: "secure" });
+                        this.$router.replace({
+                            name: "home"
+                        });
                     } else {
                         console.log('The username and / or password is incorrect');
                     }
@@ -46,8 +48,8 @@
 </script>
 
 <style scoped>
-
-/*==================== login form ====================*/
+    /*==================== login form ====================*/
+    
     .login {
         position: absolute;
         width: 100vw;
@@ -56,7 +58,7 @@
         line-height: 100px;
         z-index: 3;
     }
-
+    
     .login button {
         background-color: rgb(47, 25, 15);
         width: 150px;
@@ -70,7 +72,8 @@
         outline: none;
     }
     
-    .login input[type=text], input[type=password] {
+    .login input[type=text],
+    input[type=password] {
         background: transparent;
         font-size: 25px;
         color: rgb(255, 255, 255);
@@ -84,7 +87,7 @@
         color: rgba(255, 255, 255, .8);
         font-weight: 600;
     }
-
+    
     .sign {
         margin-top: -10px;
         z-index: -1;

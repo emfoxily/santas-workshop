@@ -1,29 +1,29 @@
 <template>
     <div>
         <Navigation />
-        <img class="header" src="./meetTheTeam.png" alt="Meet the Team"/>
+        <img class="header" src="./meetTheTeam.png" alt="Meet the Team" />
         <div class="staff">
             <div>
-                <img :src="elves[0].elf_avatar" @click="aboutBuddy()" alt="Buddy"/>
+                <img :src="elves[0].elf_avatar" @click="aboutBuddy()" alt="Buddy" />
                 <h3>
                     {{ elves[0].elf_name }}
                 </h3>
             </div>
             <div>
-                <img :src="elves[1].elf_avatar" @click="aboutMingMing()" alt="Ming Ming"/>
+                <img :src="elves[1].elf_avatar" @click="aboutMingMing()" alt="Ming Ming" />
                 <h3>
                     {{ elves[1].elf_name }}
                 </h3>
             </div>
             <div>
-                <img :src="elves[2].elf_avatar" @click="aboutJovie()" alt="Jovie"/>
+                <img :src="elves[2].elf_avatar" @click="aboutJovie()" alt="Jovie" />
                 <h3>
                     {{ elves[2].elf_name }}
                 </h3>
             </div>
         </div>
         <div class="wrapper" v-if="showBuddyAbout">
-           <p class="blurb">
+            <p class="blurb">
                 {{ elves[0].elf_about }}
             </p>
         </div>
@@ -38,66 +38,70 @@
             </p>
         </div>
         <span class="click" v-if="showJovieAbout == false && showBuddyAbout == false && showMingMingAbout == false">
-            Click on one of the team members to learn more about them!
-        </span>
+                Click on one of the team members to learn more about them!
+            </span>
+        <Footer />
         <Trees />
     </div>
 </template>
 
 <script>
-import Navigation from '../navigation/Navigation.vue';
-import Trees from '../trees/Trees.vue';
-
-import axios from "axios";
-
-export default {
-    name: 'Meet-the-Team',
-    components: {
-        Navigation,
-        Trees
-    },
-    data() {
-        return {
-            elves:[],
-            showBuddyAbout: false,
-            showMingMingAbout: false,
-            showJovieAbout: false
-        }
-    },
-    mounted() {
-        axios({
-            method: "GET", "url": "/elves"
-        }).then(result => {
-            this.elves = result.data;
-            // console.log(this.elves);         
-        }, error => {
-            console.log(error); 
-        })
-    },
-    methods: {
-        aboutBuddy() {
-            this.showBuddyAbout = !this.showBuddyAbout;
-            if (this.showMingMingAbout === true || this.showJovieAbout === true) {
-                this.showMingMingAbout = false;
-                this.showJovieAbout = false;
-            }    
+    import Navigation from '../navigation/Navigation.vue';
+    import Trees from '../trees/Trees.vue';
+    import Footer from '../footer/Footer.vue';
+    
+    import axios from "axios";
+    
+    export default {
+        name: 'Meet-the-Team',
+        components: {
+            Navigation,
+            Trees,
+            Footer
         },
-        aboutMingMing() {
-            this.showMingMingAbout = !this.showMingMingAbout;
-            if (this.showBuddyAbout === true || this.showJovieAbout === true) {
-                this.showBuddyAbout = false;
-                this.showJovieAbout = false;
-            }        
+        data() {
+            return {
+                elves: [],
+                showBuddyAbout: false,
+                showMingMingAbout: false,
+                showJovieAbout: false
+            }
         },
-        aboutJovie() {
-            this.showJovieAbout = !this.showJovieAbout;
-            if (this.showMingMingAbout === true || this.showBuddyAbout === true) {
-                this.showMingMingAbout = false;
-                this.showBuddyAbout = false;
-            }        
+        mounted() {
+            axios({
+                method: "GET",
+                "url": "/elves"
+            }).then(result => {
+                this.elves = result.data;
+                // console.log(this.elves);         
+            }, error => {
+                console.log(error);
+            })
+        },
+        methods: {
+            aboutBuddy() {
+                this.showBuddyAbout = !this.showBuddyAbout;
+                if (this.showMingMingAbout === true || this.showJovieAbout === true) {
+                    this.showMingMingAbout = false;
+                    this.showJovieAbout = false;
+                }
+            },
+            aboutMingMing() {
+                this.showMingMingAbout = !this.showMingMingAbout;
+                if (this.showBuddyAbout === true || this.showJovieAbout === true) {
+                    this.showBuddyAbout = false;
+                    this.showJovieAbout = false;
+                }
+            },
+            aboutJovie() {
+                this.showJovieAbout = !this.showJovieAbout;
+                if (this.showMingMingAbout === true || this.showBuddyAbout === true) {
+                    this.showMingMingAbout = false;
+                    this.showBuddyAbout = false;
+                }
+            }
         }
     }
-}
 </script>
 
 <style scoped>
@@ -106,7 +110,7 @@ export default {
         justify-content: center;
         align-content: center;
     }
-
+    
     .staff img {
         width: 250px;
         height: 250px;
@@ -115,18 +119,18 @@ export default {
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
         cursor: pointer;
     }
-
+    
     .staff h3 {
         margin-left: -20px;
         color: rgb(255, 255, 255);
     }
-
+    
     .header {
         position: relative;
         margin-top: 75px;
         width: 75%;
     }
-
+    
     .wrapper {
         background-image: url('../assets/peppermint.png');
         background-size: cover;
@@ -137,7 +141,7 @@ export default {
         border: 4px solid rgb(122, 19, 19);
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
     }
-
+    
     .wrapper p {
         background-image: url('../assets/woodbg.png');
         margin: 0 auto;
@@ -148,7 +152,7 @@ export default {
         border: 4px solid rgb(20, 12, 8);
         box-shadow: 5px 2px 20px rgba(0, 0, 0, .7);
     }
-
+    
     .click {
         padding: 1em;
         font-size: 25px;

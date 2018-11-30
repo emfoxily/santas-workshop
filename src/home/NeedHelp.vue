@@ -7,11 +7,11 @@
             <p>
                 Get help from our most trained elves to get the toy you deserve!
             </p>
-            <a href="/contact">
+            <router-link to="/contact">
                 <button>
                     Open a Ticket
                 </button>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
