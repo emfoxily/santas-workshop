@@ -6,6 +6,9 @@
             <input type="password" name="password" v-model="input.password" placeholder="PASSWORD" />
             <br/>
             <button type="button" @click="login()">LOGIN</button>
+            <h2>
+                To login, use walter_hobbs with the password christmasl0ver!
+            </h2>
         </div>
         <img class="sign" src="../assets/login-sign.png" alt="Login Sign" />
         <Trees />
@@ -47,7 +50,7 @@
     };
 </script>
 
-<style scoped>
+<style scope>
     /*==================== login form ====================*/
     
     .login {
@@ -91,5 +94,9 @@
     .sign {
         margin-top: -10px;
         z-index: -1;
+    }
+
+    h2 {
+        color: #fff;
     }
 </style>
